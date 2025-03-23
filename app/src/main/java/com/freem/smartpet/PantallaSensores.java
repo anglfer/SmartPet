@@ -20,12 +20,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class PantallaSensores extends AppCompatActivity {
-
     private TextView txtTemperatura;
     private TextView txtHumedad;
 
     private FirebaseAuth mAuth;
     private DatabaseReference myRef;
+    private ValueEventListener valueEventListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class PantallaSensores extends AppCompatActivity {
 
         // Inicializa Firebase Auth y Database
         mAuth = FirebaseAuth.getInstance();
-        myRef = FirebaseDatabase.getInstance().getReference("sensor");
+        myRef = FirebaseDatabase.getInstance().getReference("sensor/registros");
 
         // Email y password para autenticación
         String email = "christoferriveravalderrama@gmail.com";
@@ -49,26 +49,47 @@ public class PantallaSensores extends AppCompatActivity {
                         Log.d("AuthSuccess", "Usuario autenticado");
 
                         // Evento de lectura de la base de datos
-                        myRef.addValueEventListener(new ValueEventListener() {
+                        valueEventListener = new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                // Leer como Double en lugar de String
-                                Double estadoTemperatura = snapshot.child("temperatura").getValue(Double.class);
-                                Double estadoHumedad = snapshot.child("humedad").getValue(Double.class);
+                                // Asegúrate de que haya registros disponibles
+                                if (snapshot.exists()) {
+                                    // Iterar sobre los registros y obtener el último
+                                    for (DataSnapshot registro : snapshot.getChildren()) {
+                                        Double estadoTemperatura = registro.child("temperatura").getValue(Double.class);
+                                        Double estadoHumedad = registro.child("humedad").getValue(Double.class);
 
-                                // Convertir a String para mostrar
-                                txtTemperatura.setText(estadoTemperatura != null ? estadoTemperatura.toString() : "No disponible");
-                                txtHumedad.setText(estadoHumedad != null ? estadoHumedad.toString() : "No disponible");
+                                        if (estadoTemperatura != null && estadoHumedad != null) {
+                                            // Actuliza la UI con los últimos valores
+                                            txtTemperatura.setText(estadoTemperatura.toString());
+                                            txtHumedad.setText(estadoHumedad.toString());
+                                        }
+                                    }
+                                } else {
+                                    txtTemperatura.setText("No disponible");
+                                    txtHumedad.setText("No disponible");
+                                }
                             }
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError error) {
                                 Log.e("FirebaseError", "Error al leer datos: " + error.getMessage());
                             }
-                        });
+                        };
+
+                        myRef.addValueEventListener(valueEventListener);
                     } else {
                         Log.e("AuthError", "Error al autenticar usuario: " + task.getException());
                     }
                 });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Desuscribirse del ValueEventListener
+        if (mAuth.getCurrentUser() != null && valueEventListener != null) {
+            myRef.removeEventListener(valueEventListener);
+        }
     }
 }
