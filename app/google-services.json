@@ -8,6 +8,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:298570557151:android:fe1bf5a725dc4de551eb6a",
+        "android_client_info": {
+          "package_name": "com.example.smart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwVM-e1U2fJM_GnAuBCcVsU2wqjKn3868"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:298570557151:android:87e0a1920962af3a51eb6a",
         "android_client_info": {
           "package_name": "com.freem.smartpet"
