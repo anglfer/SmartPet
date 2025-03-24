@@ -1,7 +1,9 @@
 package com.freem.smartpet;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -23,6 +25,9 @@ public class PantallaSensores extends AppCompatActivity {
     private TextView txtTemperatura;
     private TextView txtHumedad;
 
+
+    private Button btnHistoria;
+
     private FirebaseAuth mAuth;
     private DatabaseReference myRef;
     private ValueEventListener valueEventListener;
@@ -35,6 +40,11 @@ public class PantallaSensores extends AppCompatActivity {
         txtTemperatura = findViewById(R.id.txtTemperatura);
         txtHumedad = findViewById(R.id.txtHumedad);
 
+        btnHistoria = findViewById(R.id.btnHistoria);
+        btnHistoria.setOnClickListener(v -> {
+            Intent intent = new Intent(PantallaSensores.this, Historial.class);
+            startActivity(intent);
+        });
         // Inicializa Firebase Auth y Database
         mAuth = FirebaseAuth.getInstance();
         myRef = FirebaseDatabase.getInstance().getReference("sensor/registros");
