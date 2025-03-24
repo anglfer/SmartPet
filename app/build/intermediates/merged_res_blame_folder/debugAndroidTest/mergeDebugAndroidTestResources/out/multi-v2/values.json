@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.freem.smartpet.test.app-mergeDebugAndroidTestResources-2:/values/values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\chris\\.gradle\\caches\\8.10.2\\transforms\\06ec91df8ce788d2d88c7e516bbb3239\\transformed\\core-1.6.1\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "4,11",
+                        "startColumns": "0,0",
+                        "startOffsets": "142,510",
+                        "endLines": "10,17",
+                        "endColumns": "8,8",
+                        "endOffsets": "509,875"
+                    },
+                    "to": {
+                        "startLines": "2,9",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,427",
+                        "endLines": "8,15",
+                        "endColumns": "8,8",
+                        "endOffsets": "422,792"
+                    }
+                }
+            ]
+        }
+    ]
+}

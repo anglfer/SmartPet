@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="firebase_database_url" translatable="false">https://smartpet-6d57d-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">298570557151</string>
+    <string name="google_api_key" translatable="false">AIzaSyDwVM-e1U2fJM_GnAuBCcVsU2wqjKn3868</string>
+    <string name="google_app_id" translatable="false">1:298570557151:android:87e0a1920962af3a51eb6a</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDwVM-e1U2fJM_GnAuBCcVsU2wqjKn3868</string>
+    <string name="google_storage_bucket" translatable="false">smartpet-6d57d.firebasestorage.app</string>
+    <string name="project_id" translatable="false">smartpet-6d57d</string>
+</resources>

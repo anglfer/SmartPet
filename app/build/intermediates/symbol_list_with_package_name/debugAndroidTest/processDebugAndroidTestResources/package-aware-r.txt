@@ -1,0 +1,3 @@
+com.freem.smartpet.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme
