@@ -20,7 +20,7 @@
             android:name=".PantallaSensores"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ControllerLogin.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ControllerLogin.s_cuenta" android:exported="true"/>
+        <activity android:name=".ControllerLogin.c_cuenta" android:exported="true"/>
+        <activity android:name=".ControllerLogin.prueba" android:exported="true"/>
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/iguana"
+            android:contentDescription="Logo de la aplicación" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#8FDCD9"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="#FF7F38"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Correo"
+                    android:textColor="#000000"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp"
+                    android:background="#FFFFFF"
+                    android:hint="Ingrese su correo"
+                    android:text="mexco"
+                    android:inputType="textEmailAddress"/>
+
+                <!-- Contraseña - Segundo campo -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contraseña"
+                    android:textColor="#000000"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/editTextPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp"
+                    android:background="#FFFFFF"
+                    android:hint="Ingrese su contraseña"
+                    android:text="mexco"
+                    android:inputType="textPassword"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre"
+                    android:textColor="#000000"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/editTextNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp"
+                    android:background="#FFFFFF"
+                    android:text="mexco"
+                    android:hint="Ingrese su nombre de usuario"
+                    android:inputType="text"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Teléfono"
+                    android:textColor="#000000"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/editTextTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="15dp"
+                    android:padding="10dp"
+                    android:background="#FFFFFF"
+                    android:hint="Ingrese su número de teléfono"
+                    android:inputType="phone"/>
+
+                <Button
+                    android:id="@+id/btnCrearCuenta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Crear cuenta"
+                    android:textColor="#000000"
+                    android:backgroundTint="#B4D65A"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnRegresar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Regresar"
+                android:textColor="#000000"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:backgroundTint="#B4D65A"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
